@@ -5,12 +5,10 @@ class Solution {
         long answer = 0;
         
         int end = d/k;
-        // System.out.println(end);
         
         for(int i = 0; i <= end; i++){
             long max = (long)Math.floor(Math.sqrt((long)d*d-(long)i*i*k*k));
             answer += max/k+1;
-            // System.out.print(max+" ");
         }
         return answer;
     }
