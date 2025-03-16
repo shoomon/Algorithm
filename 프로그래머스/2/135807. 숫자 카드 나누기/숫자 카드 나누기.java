@@ -11,7 +11,7 @@ class Solution {
             gcd2 = getGcd(gcd2,arrayB[i]);
         }
         
-        System.out.println(gcd1+" "+gcd2);
+        // System.out.println(gcd1+" "+gcd2);
         
         if(checkDivison(arrayA, gcd2) && answer < gcd2) answer = gcd2;
         if(checkDivison(arrayB, gcd1) && answer < gcd1) answer = gcd1;
