@@ -14,9 +14,9 @@ class Solution {
             count.put(discount[rear], cnt+1);
         }
         if(check(want,number,count)) answer++;
-        // for(String key : count.keySet())System.out.print(key+" "+count.get(key)+"/");
-        // System.out.println();
+
         for(; rear < discount.length; rear++){
+            //같은 키에 동시에 접근할 경우 값이 덮어씌워질 수 있음
             if(!discount[rear].equals(discount[rear-10])){
                 int inCnt = count.getOrDefault(discount[rear], 0);
                 int outCnt = count.get(discount[rear-10]);
@@ -24,9 +24,7 @@ class Solution {
                 count.put(discount[rear], inCnt+1);
                 count.put(discount[rear-10], outCnt-1);
             }
-            
-            // for(String key : count.keySet())System.out.print(key+" "+count.get(key)+"/");
-            // System.out.println();
+
             if(check(want,number,count)) answer++;
         }
         
